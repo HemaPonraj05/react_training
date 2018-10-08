@@ -37,6 +37,19 @@
         const e = { ...a, ...b };
         console.log("object using spread ", e);
 
+        //arrow functions
+        let add = (a, b) => {
+            c = a + b;
+            return c;
+        }
+        console.log(add(10, 20));
+        let add1 = (a, b) => a + b; //noreturn statement
+        let add2 = a => a + 10;//single param
+        let add3 = () => a + 10;//no param
+        let add4 = () => ({ x: 10 });//arrow fn returning object
+
+
+
     </script>
 
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class Parent {
+            constructor() {
+
+            }
+
+            static Pi() {
+                return 3.14;
+            }
+
+            //findRadius = (r) => Parent.Pi * r * r;
+            findRadius(r) {
+                // return Parent.Pi * r * r;
+                console.log(Parent.Pi * r * r);
+            }
+        }
+        class Child extends Parent {
+            constructor() {
+                super();
+            }
+
+            //whoAmI = () => `I am a circle with radius`;
+            whoAmI() {
+                console.log("I am a circle with radius");
+            }
+
+        }
+
+        const c = new Child;
+        c.whoAmI();
+        c.findRadius(4);
+    </script>
+</body>
+
+</html>
