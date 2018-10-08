@@ -13,15 +13,26 @@
 
 <body>
     <div id="app"></div>
-    <script type="text/babel>">
+    <script type="text/babel">
         const rootNode = document.getElementById("app");
-        class Welcome extends React.Component {
+        //console.log("fruits from props ",this.props.fruits);
+            
+        class Welcome extends React.Component {            
             render() {
-                return <h1>Hello, {this.props.name}</h1>;
+                let fruits = (this.props.fruits).map((element) => <li> {element} </li>);
+               
+                return (<div>
+                <h1>{this.props.greet}, {this.props.name}</h1>
+                <ul> {fruits} </ul>
+                </div>);
             }
         }
+        Welcome
+        .defaultProps = {
+        greet: "Hello, Hey "
+        }
 
-        ReactDOM.render(<div> <Welcome name="Hema" greet="Hey" /></div>, rootNode);
+        ReactDOM.render(<div> <Welcome name="Hema" greet="Hey" fruits = {["apple", "orange", "grapes"]}/></div>, rootNode);
     </script>
 
 

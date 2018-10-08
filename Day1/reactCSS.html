@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <style>
+        .internal
+    {
+        color: rebeccapurple;
+        background-color: aquamarine;
+        height: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const rootNode = document.getElementById("app");
+        function CSSDemo () {
+            let obj = {
+                color: "rebeccapurple",
+                backgroundColor: "aquamarine",
+                height: "10"
+                };
+
+        return (<div>
+                <div id="external">External</div> <br/>
+                <div id="internal" className="internal">Internal</div> <br/>
+                <div style={obj}>Inline</div> <br/>
+                <div style={{fontWeight:"bold"}}>Inline2</div>
+                </div>);
+        }
+        
+        ReactDOM.render(<div> <CSSDemo /> <hr/>  </div>, rootNode);
+        </script>
+
+
+
+</body>
+
+</html>
