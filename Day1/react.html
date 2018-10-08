@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First React</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- SPA goes here-->
+    </div>
+    <script type="text/babel">
+           // const jsx = <h1>Hello World! </h1> //initial
+            const rootNode = document.getElementById("app");
+    function Hello(props) {
+        //const jsx = <div> <h1>Hello World! </h1> <hr/> </div> 
+        //second
+        const jsx = <div> <HelloTitle/> <hr/> <HelloBody val={props.name}/> 
+        <div> {props.children} </div>  
+        </div>
+        return jsx;
+    }
+
+    function HelloTitle() {
+        return <h1> React JS </h1>
+    }
+
+    HelloBody.defaultProps = {
+        greet: "Hello, Hey "
+    }
+
+    function HelloBody(props) {
+       // return <h2> Hello {props.val} !!! </h2>
+       return <h2> {props.greet} {props.val} !!! </h2> //will take default props if none is passed
+    }
+    
+           // ReactDOM.render(jsx,rootNode); //initial
+           //ReactDOM.render(<div> <Hello /> <h1> Just like that </h1> <hr/> <Hello /> <h1> Just like that </h1> </div>,rootNode); //without props
+           //ReactDOM.render(<div> <Hello name="Hema"/> <h1> Just like that </h1> <hr/> <Hello name="Verizon"/> <h1> Just like that </h1> </div>,rootNode); //with props
+          // ReactDOM.render(<div> <Hello name="Hema"/> <h1> Just like that </h1> <hr/> <Hello name="Verizon"/> <h1> Just like that </h1> </div>,rootNode); //with props //without children
+           ReactDOM.render(<div> <Hello name="Hema"> <h1> Just like that </h1> </Hello>  <hr/>  </div>,rootNode); //with props
+    </script>
+</body>
+
+</html>

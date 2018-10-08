@@ -14,15 +14,11 @@
             constructor() {
 
             }
-
             static Pi() {
                 return 3.14;
             }
-
-            //findRadius = (r) => Parent.Pi * r * r;
-            findRadius(r) {
-                // return Parent.Pi * r * r;
-                console.log(Parent.Pi * r * r);
+            findRadius = (r) => {
+                return Parent.Pi * r * r;
             }
         }
         class Child extends Parent {
@@ -30,10 +26,7 @@
                 super();
             }
 
-            //whoAmI = () => `I am a circle with radius`;
-            whoAmI() {
-                console.log("I am a circle with radius");
-            }
+            whoAmI = () => `I am a circle with radius`;
 
         }
 
