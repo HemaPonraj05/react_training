@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 and babel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+
+<body>
+    <script lang="text/babel">
+        //template literals
+        var s1 = `World`
+        var s2 = `Hello ${s1} !!!`;
+        console.log("using template literal ", s2);
+        //let and const keywords
+        function doSomething() {
+            let x = 10;
+            if (true) {
+                let y = 10;
+            }
+            console.log("x1.. ", x);//will print
+            // console.log("y.. ",y);//console error because y is block scoped
+        }
+        var fun = doSomething();
+        console.log("doSomething... ", fun);
+        //using babel
+        const x = [10, 20, 30];
+        const y = [100, 200, 300];
+        const z = [...x, ...y];
+        console.log("array using spread ", z);
+
+        const a = { x: 10, y: 20, z: 30 };
+        const b = { u: 100, v: 200, w: 300 };
+        const e = { ...a, ...b };
+        console.log("object using spread ", e);
+
+    </script>
+
+</body>
+
+</html>
