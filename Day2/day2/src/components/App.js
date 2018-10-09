@@ -9,6 +9,7 @@ export default App; */
 import React from "react";
 import Display from "./Display";
 import Form from "./Form";
+import Keys from "./Keys";
 
 class App extends React.Component {
   constructor() {
@@ -35,10 +36,17 @@ class App extends React.Component {
   }
 
   render() {
+    const inputData = [
+      { id: 100, dept: "HR" },
+      { id: 200, dept: "Marketing" },
+      { id: 300, dept: "Finance" }
+    ];
     return (
       <div>
-        <Form incrHandler={this.increment} decrHandler={this.decrHandler} />
-        <Display val={this.state.count} />
+        <Form incrHandler={this.increment} decrHandler={this.decrement} />
+        <Display val={this.state.counter} />
+        <hr />
+        <Keys arrayInput={inputData} />
       </div>
     );
   }

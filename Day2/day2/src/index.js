@@ -11,7 +11,11 @@ import StateChange from "./components/StateChange";
 //ReactDOM.render(<App />, document.getElementById("app")); //Hello World
 ReactDOM.render(
   <div>
-    <App /> <Clock /> <StateChange />
+    <App />
+    <hr />
+    <Clock />
+    <hr />
+    <StateChange />
   </div>,
   document.getElementById("app")
 );
