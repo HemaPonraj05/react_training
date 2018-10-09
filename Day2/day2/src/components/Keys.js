@@ -3,14 +3,16 @@ import React from "react";
 function Keys(props) {
   console.log("input ... ", props);
   let rowData = props.arrayInput.map(element => {
-    return <td key={element.id}> {element.dept} </td>;
+    return (
+      <tr>
+        <td key={element.id}> {element.dept} </td>
+      </tr>
+    );
   });
 
   return (
     <div>
-      <table border="1">
-        <tr>{rowData}</tr>
-      </table>
+      <table border="1">{rowData}</table>
     </div>
   );
 }
