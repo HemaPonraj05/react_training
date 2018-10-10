@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.0/redux.js"></script>
+    <title>Redux</title>
+</head>
+
+<body>
+
+    <input type="button" value="Increment" onClick=increment() />
+    &nbsp;
+    <input type="button" value="Decrement" onClick=decrement() />
+    <h1 id="displayCount">0</h1>
+
+
+    <script type="text/javascript">
+        function increment() {
+            console.log("incrementing...");
+            appStore.dispatch({ type: "INCR" });
+        }
+        function decrement() {
+            console.log("decrementing...");
+            appStore.dispatch({ type: "DECR" });
+        }
+
+        //reducer
+        function counterReducer(prevState = { count: 0 }, action) {
+            let newState;
+            switch (action.type) {
+                case "INCR":
+                    newState = { ...prevState, count: prevState.count + 1 };
+                    break;
+                case "DECR":
+                    newState = { ...prevState, count: prevState.count - 1 };
+                    break;
+                default:
+                    newState = { ...prevState }
+                    break;
+            }
+            console.log("prevstate.. ", prevState);
+            console.log("action.. ", action);
+            console.log("newstate.. ", newState);
+            console.log("-----------------------------");
+            return newState;
+        }
+
+        //store
+        const appStore = Redux.createStore(counterReducer);
+        console.log("appStore ", appStore);
+
+        appStore.subscribe(() => {
+            console.log("appStore state", appStore.getState());
+            document.getElementById("displayCount").innerText = appStore.getState().count;
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
