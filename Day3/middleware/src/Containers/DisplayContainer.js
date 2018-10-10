@@ -3,9 +3,9 @@ import Display from "../Components/Display";
 
 function mapStateToProps(state) {
   return {
-    fetching: state.fetching,
-    userDetails: state.userDetails,
-    error: state.error
+    fetching: state.user.fetching,
+    userDetails: state.user.userDetails,
+    error: state.user.error
   };
 }
 

@@ -3,14 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { createStore, applyMiddleware } from "redux";
-import userDetailsReducer from "./Reducers/userDetailsReducer";
+//import userDetailsReducer from "./Reducers/userDetailsReducer";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { logger } from "redux-logger";
 import thunk from "redux-thunk";
+import cr from "./Reducers/CombinedReducers";
 
 const appStore = createStore(
-  userDetailsReducer,
+  cr,
   composeWithDevTools(applyMiddleware(logger, thunk))
 );
 
