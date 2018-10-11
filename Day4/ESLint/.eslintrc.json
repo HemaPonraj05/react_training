@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "spaced-comment": 0,
+    "no-unused-vars": 0,
+    "linebreak-style": 0,
+    "import/no-unresolved": 0,
+    "no-const-assign": 2
+  }
+}
